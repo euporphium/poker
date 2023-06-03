@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  gap: 6px;
+}
+
+.selected span:first-child {
+  background: white;
+  color: blue;
+}
+
+div.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
