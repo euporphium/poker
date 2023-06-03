@@ -237,21 +237,28 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   function calculate() {
-    const table = new TexasHoldem();
-    state.players.forEach((player) =>
-      table.addPlayer(player.cards.map((c) => c.id) as [string, string])
-    );
-    table.setBoard(
-      state.tableCards.map((c) => c.id) as [string, string, string, string]
-    );
+    try {
+      const table = new TexasHoldem();
+      state.players.forEach((player) =>
+        table.addPlayer(player.cards.map((c) => c.id) as [string, string])
+      );
+      table.setBoard(
+        state.tableCards.map((c) => c.id) as [string, string, string, string]
+      );
 
-    const result = table.calculate();
+      const result = table.calculate();
 
-    const playerOdds = result
-      .getPlayers()
-      .map((player) => player.getWinsPercentageString());
+      const playerOdds = result
+        .getPlayers()
+        .map((player) => player.getWinsPercentageString());
 
-    dispatch({ type: 'setOdds', payload: playerOdds });
+      dispatch({ type: 'setOdds', payload: playerOdds });
+    } catch (e) {
+      // TODO: show error message
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      console.error(e.message);
+    }
   }
 
   return (
