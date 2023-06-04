@@ -5,7 +5,9 @@ export default function Controls() {
   const dispatch = usePokerDispatch();
 
   return (
-    <>
+    <div>
+      <h1>Poker Odds Calculator</h1>
+
       {poker.players.length < 9 && (
         <button onClick={() => dispatch({ type: 'addPlayer' })}>
           Add Player
@@ -21,6 +23,6 @@ export default function Controls() {
       <button onClick={() => dispatch({ type: 'calculateOdds' })}>
         Calculate Odds
       </button>
-    </>
+    </div>
   );
 }

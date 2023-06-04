@@ -9,10 +9,10 @@ import './App.css';
 function App() {
   return (
     <PokerProvider>
+      <Controls />
       <Deck />
       <CommunityCards />
       <Players />
-      <Controls />
     </PokerProvider>
   );
 }
@@ -23,10 +23,10 @@ function Players() {
   const poker = usePoker();
 
   return (
-    <>
+    <div className="player-container">
       {poker.players.map((player) => (
         <PlayerCards key={player.id} playerId={player.id} />
       ))}
-    </>
+    </div>
   );
 }
