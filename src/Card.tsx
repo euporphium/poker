@@ -1,10 +1,10 @@
-export default function Card({ card, disabled, onClick }: any) {
+type CardProps = {
+  card: any;
+  onClick: () => void;
+};
+
+export default function Card({ card, onClick }: CardProps) {
   return (
-    <img
-      src={`/images/cards/${card.id}.png`}
-      alt={card.id}
-      className={disabled ? 'disabled' : ''}
-      onClick={disabled ? null : onClick}
-    />
+    <img src={`/images/cards/${card.id}.png`} alt={card.id} onClick={onClick} />
   );
 }

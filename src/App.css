@@ -15,11 +15,6 @@
   color: blue;
 }
 
-div.disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
 img {
   max-width: 50px;
 }
