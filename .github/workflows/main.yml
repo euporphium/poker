@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout to the repository
+        uses: actions/checkout@v2
+        
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        
+      - name: Install package dependencies
+        run: npm install
+        
+      - name: Create test build
+        run: npm run build
+        
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
+          
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v2.0.1
+        with:
+          artifact_name: production-files
