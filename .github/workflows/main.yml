@@ -33,14 +33,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     
+    permissions:
+      pages: write
+      id-token: write
+    
     steps:
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.1.1
-        with:
-          path: ./dist
-          
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v2.0.1
