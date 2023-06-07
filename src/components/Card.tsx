@@ -9,7 +9,7 @@ export default function Card({ card, onClick }: CardProps) {
   return (
     <img
       className="card"
-      src={`/images/cards/${card.id}.png`}
+      src={`/poker/images/cards/${card.id}.png`}
       alt={card.id}
       onClick={onClick}
     />
