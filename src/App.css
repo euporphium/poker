@@ -48,8 +48,25 @@ h1 {
   flex-wrap: wrap;
 }
 
+.player-container__add-player {
+  margin: auto 0;
+  display: grid;
+  gap: 1em;
+}
+
+.player-container__add-player > button {
+  padding: 1em;
+}
+
+#community-cards {
+  max-width: 520px;
+}
+
+#deck > p {
+  margin-top: 1em;
+}
+
 .table-card-container {
-  max-width: fit-content;
   border: 1px solid rgba(255, 255, 255, 0.87);
   border-radius: 4px;
 }
@@ -72,5 +89,4 @@ h1 {
   gap: 0.5em;
   overflow: scroll;
   min-width: 222px;
-  max-width: fit-content;
 }

@@ -7,9 +7,13 @@ export default function Deck() {
   const dispatch = usePokerDispatch();
 
   return (
-    <div className="table-card-container">
+    <div id="deck" className="table-card-container">
       <h2>Available Cards</h2>
-      {poker.cardTarget && <p>Select a card to assign to {poker.cardTarget}</p>}
+      {poker.cardTarget ? (
+        <p>Select a card to assign to {poker.cardTarget}</p>
+      ) : (
+        <p>Select a player or the community first to assign cards</p>
+      )}
       <div className="card-container">
         {cards
           .filter((card) => poker.availableCards.indexOf(card) !== -1)

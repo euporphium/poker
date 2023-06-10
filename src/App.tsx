@@ -14,8 +14,10 @@ function App() {
           Select containers to assign player and community cards to calculate
           each player's odds of winning.
         </p>
+
         <Players />
         <CommunityCards />
+
         <Deck />
         <Controls />
       </div>

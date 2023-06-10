@@ -7,7 +7,8 @@ export default function CommunityCards() {
 
   return (
     <div
-      className={`table-card-container ${
+      id="community-cards"
+      className={`table-card-container community ${
         poker.cardTarget === 'Table' ? 'selected' : ''
       }`}
     >
