@@ -4,7 +4,7 @@ import { TexasHoldem } from 'poker-odds-calc';
 
 type PokerState = {
   availableCards: Card[];
-  cardTarget: string;
+  cardTarget: string | null;
   tableCards: Card[];
   players: {
     id: string;
@@ -112,7 +112,10 @@ function reducer(state: PokerState, action: PokerAction) {
       }
     }
     case 'setCardTarget': {
-      return { ...state, cardTarget: action.payload };
+      return {
+        ...state,
+        cardTarget: state.cardTarget === action.payload ? '' : action.payload,
+      };
     }
     case 'addPlayer': {
       return {
@@ -182,7 +185,7 @@ function reducer(state: PokerState, action: PokerAction) {
 
 const initialState: PokerState = {
   availableCards: cards,
-  cardTarget: 'Table',
+  cardTarget: 'Player 1',
   tableCards: [] as Card[],
   players: [
     {

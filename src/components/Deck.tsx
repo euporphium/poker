@@ -8,7 +8,8 @@ export default function Deck() {
 
   return (
     <div className="table-card-container">
-      <h2>Deck</h2>
+      <h2>Available Cards</h2>
+      {poker.cardTarget && <p>Select a card to assign to {poker.cardTarget}</p>}
       <div className="card-container">
         {cards
           .filter((card) => poker.availableCards.indexOf(card) !== -1)

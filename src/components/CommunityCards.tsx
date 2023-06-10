@@ -6,13 +6,13 @@ export default function CommunityCards() {
   const dispatch = usePokerDispatch();
 
   return (
-    <div className="table-card-container">
-      <h2 className={poker.cardTarget === 'Table' ? 'selected' : ''}>
-        <span
-          onClick={() => dispatch({ type: 'setCardTarget', payload: 'Table' })}
-        >
-          Community Cards
-        </span>
+    <div
+      className={`table-card-container ${
+        poker.cardTarget === 'Table' ? 'selected' : ''
+      }`}
+    >
+      <h2 onClick={() => dispatch({ type: 'setCardTarget', payload: 'Table' })}>
+        Community Cards
       </h2>
       <div className="card-container">
         {poker.tableCards.map((card) => (

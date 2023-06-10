@@ -1,3 +1,7 @@
+* {
+  /*outline: 1px solid red;*/
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,19 +9,38 @@
   text-align: center;
 }
 
-.card-container {
-  height: 116px;
-  display: flex;
-  gap: 8px;
-  overflow: scroll;
+h1 {
+  font-size: 3em;
 }
 
-.table-card-container {
-  padding: 1rem;
-  margin: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.87);
-  border-radius: 8px;
-  min-width: 220px;
+.layout {
+  display: grid;
+  gap: 1em;
+}
+
+.player-container {
+  display: grid;
+  gap: 1em;
+}
+
+.players-control {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.players-control__buttons {
+  display: grid;
+  gap: 0.5em;
+  font-size: 1.5em;
+}
+
+.players-control__buttons > button {
+  padding: 0.25em 0.5em;
+}
+
+.players-control__player-count {
+  margin: auto 0.5em;
+  font-size: 3em;
 }
 
 .player-container {
@@ -25,9 +48,27 @@
   flex-wrap: wrap;
 }
 
-.selected span:first-child {
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+.table-card-container {
+  border: 1px solid rgba(255, 255, 255, 0.87);
+  border-radius: 4px;
+}
+
+.table-card-container > h2 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.87);
+}
+
+.table-card-container.selected > h2 {
   background: white;
-  color: blue;
+  opacity: 0.87;
+  color: rgb(204, 43, 29);
+  font-weight: bold;
+}
+
+.card-container {
+  height: 164px;
+  padding: 1em;
+  display: flex;
+  gap: 0.5em;
+  overflow: scroll;
+  min-width: 222px;
 }
