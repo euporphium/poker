@@ -76,8 +76,8 @@
     font-weight: 400;
 
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    color: rgb(199, 178, 97);
+    background-color: rgb(46, 53, 47);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
